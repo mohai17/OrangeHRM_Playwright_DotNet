@@ -22,10 +22,8 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             browser = await playwright.Chromium.LaunchAsync(new()
             {
                 Channel = "chrome",
-                Headless = false,
-                SlowMo = 2000,
-           
-                Args = new[] {"--start-maximized" }
+                Headless = true,
+                Args = new[] { "--start-maximized" }
 
             });
 
@@ -33,21 +31,28 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             page = await context.NewPageAsync();
 
             await page.GotoAsync("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+           
         }
 
 
         [TearDown]
-
         public async Task TearDown()
         {
-            if(page != null )
+            if (page != null)
             {
                 await page.CloseAsync();
             }
-
-            if(browser !=null)
+            if (context != null)
+            {
+                await context.CloseAsync();
+            }
+            if (browser != null)
             {
                 await browser.CloseAsync();
+            }
+            if (playwright != null)
+            {
+                playwright.Dispose();
             }
         }
 

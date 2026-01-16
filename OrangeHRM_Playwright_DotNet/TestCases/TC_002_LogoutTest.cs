@@ -1,14 +1,14 @@
-﻿using OrangeHRM_Playwright_DotNet.Drivers;
-using OrangeHRM_Playwright_DotNet.Pages;
-
+﻿using OrangeHRM_Playwright_DotNet.Pages;
+using OrangeHRM_Playwright_DotNet.Drivers;
 
 namespace OrangeHRM_Playwright_DotNet.TestCases
 {
-    internal class SupportLinkTest:Setup
+    internal class TC_002_Check_that_logout_functionality_is_working_correcly:Setup
     {
+
         [Test]
-        
-        public async Task TC_008_Support_Link_is_working_correctly()
+
+        public async Task TS_001_user_wants_to_logout()
         {
             LoginPage login = new LoginPage(page);
 
@@ -19,14 +19,13 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             ProfileDropDownObjects profile = new ProfileDropDownObjects(page);
 
             await profile.ClickOnProfileDropdown();
-            await profile.ClickOnSupportLink();
-
-            SupportPage support = new SupportPage(page);
-
-            bool actualResult = await support.IsSupportPageDisplayed();
+            await profile.ClickOnLogoutLink();
+         
+            bool actualResult = await login.IsLoginPageTitleDisplayed();
 
             Assert.That(actualResult, Is.True);
-        } 
+
+        }
 
     }
 }

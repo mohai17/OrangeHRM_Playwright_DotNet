@@ -8,13 +8,13 @@ using System.Text;
 
 namespace OrangeHRM_Playwright_DotNet.TestCases
 {
-    internal class LoginTest: Setup
+    internal class TC_001_Check_that_Login_functionality_is_working_correctly: Setup
     {
  
         
         [Test]
 
-        public async Task TC_001_Login_with_valid_username_and_valid_password()
+        public async Task TS_001_Login_with_valid_username_and_valid_password()
         {
             LoginPage login = new LoginPage(page);
 
@@ -31,7 +31,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
         [Test]
 
-        public async Task TC_002_Login_with_invalid_username_and_invalid_password()
+        public async Task TS_002_Login_with_invalid_username_and_invalid_password()
         {
 
             LoginPage login = new LoginPage(page);
@@ -48,7 +48,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
         [Test]
 
-        public async Task TC_003_Login_with_valid_username_and_invalid_password()
+        public async Task TS_003_Login_with_valid_username_and_invalid_password()
         {
 
             LoginPage login = new LoginPage(page);
@@ -65,7 +65,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
         [Test]
 
-        public async Task TC_004_Login_with_invalid_username_and_valid_password()
+        public async Task TS_004_Login_with_invalid_username_and_valid_password()
         {
 
             LoginPage login = new LoginPage(page);
@@ -83,7 +83,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
         [Test]
         
-        public async Task TC_005_Login_with_empty_username_and_password()
+        public async Task TS_005_Login_with_empty_username_and_password()
         {
 
             LoginPage login = new LoginPage(page);
