@@ -43,6 +43,12 @@ namespace OrangeHRM_Playwright_DotNet.Pages
 
         }
 
+        public async Task<bool> IsLoginPageTitleDisplayed()
+        {
+
+            return await page.Locator("//h5[@class='oxd-text oxd-text--h5 orangehrm-login-title']").IsVisibleAsync();
+        }
+
 
     }
 }

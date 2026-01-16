@@ -22,7 +22,7 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             browser = await playwright.Chromium.LaunchAsync(new()
             {
                 Channel = "chrome",
-                Headless = true,
+                Headless = false,
                 SlowMo = 2000,
            
                 Args = new[] {"--start-maximized" }
