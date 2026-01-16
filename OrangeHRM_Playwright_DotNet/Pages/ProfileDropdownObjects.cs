@@ -16,14 +16,32 @@ namespace OrangeHRM_Playwright_DotNet.Pages
 
         public async Task ClickOnProfileDropdown()
         {
-            await page.Locator("//p[@class='oxd-userdropdown-name']").ClickAsync();
-            
+            await page.Locator("//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']").ClickAsync();
+   
         }
 
         public async Task ClickOnLogoutLink()
         {
             await page.Locator("//a[normalize-space()='Logout']").ClickAsync();
+
         }
 
+        public async Task ClickOnAboutLink()
+        {
+            await page.Locator("//a[normalize-space()='About']").ClickAsync();
+
+        }
+
+        public async Task ClickOnSupportLink()
+        {
+            await page.Locator("//a[normalize-space()='Support']").ClickAsync();
+
+        }
+
+        public async Task ClickOnChangePasswordLink()
+        {
+            await page.Locator("//a[normalize-space()='Change Password']").ClickAsync();
+
+        }
     }
 }
