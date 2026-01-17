@@ -42,6 +42,18 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
         [Test]
         public async Task TS_002_user_wants_to_calcel_add_admin_process()
         {
+            LoginPage login = new LoginPage(page);
+            await login.Enter_UserName("Admin");
+            await login.Enter_Password("admin123");
+            await login.ClickOnLoginButton();
+
+            AdminUserManagementPage admin = new AdminUserManagementPage(page);
+            await admin.ClickOnAdminItem();
+            await admin.ClickOnAddAdminUserButton();
+            await admin.ClickOnCancelButton();
+            bool actualResult = await admin.IsSuccessfullyCanceledAddAdmin();
+
+            Assert.That(actualResult, Is.True);
 
         }
 
