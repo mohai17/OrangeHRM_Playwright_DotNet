@@ -17,6 +17,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
         public async Task<bool> IsLoginSucceed()
         {
             return await page.Locator("//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']").IsVisibleAsync();
+      
         }
 
     }

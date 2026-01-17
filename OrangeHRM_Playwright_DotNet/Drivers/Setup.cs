@@ -19,19 +19,18 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
         public async Task BrowserSetup()
         {
             playwright = await Playwright.CreateAsync();
-            browser = await playwright.Chromium.LaunchAsync(new()
+            browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions()
             {
-                Channel = "chrome",
-                Headless = true,
-                Args = new[] { "--start-maximized" }
-
+                Headless = false,
+                SlowMo = 1000,
+                Timeout = 120000,
+                Channel = "msedge"
             });
-
             context = await browser.NewContextAsync();
             page = await context.NewPageAsync();
 
             await page.GotoAsync("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-           
+
         }
 
 
