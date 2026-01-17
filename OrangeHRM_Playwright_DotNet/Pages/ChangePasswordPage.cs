@@ -44,6 +44,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
         {
             
             var element = await page.WaitForSelectorAsync("//div[@id='oxd-toaster_1']//p[normalize-space()='Successfully Saved']", new PageWaitForSelectorOptions { State = WaitForSelectorState.Visible });
+            
             return element != null && await element.IsVisibleAsync();
         }
 
