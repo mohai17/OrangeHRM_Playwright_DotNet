@@ -7,7 +7,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
 {
     internal class AboutPage
     {
-        private IPage page;
+        private readonly IPage page;
         public AboutPage(IPage page)
         {
             this.page = page;

@@ -8,7 +8,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
     public class DashboardPage
     {
 
-        private IPage page;
+        private readonly IPage page;
         public DashboardPage(IPage page)
         {
             this.page = page;

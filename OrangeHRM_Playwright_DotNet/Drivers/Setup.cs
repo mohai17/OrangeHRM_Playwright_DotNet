@@ -22,11 +22,15 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions()
             {
                 Headless = false,
-                SlowMo = 1000,
+                SlowMo = 5000,
                 Timeout = 120000,
                 Channel = "msedge"
             });
+            
             context = await browser.NewContextAsync();
+            await context.ClearCookiesAsync();
+            await context.ClearPermissionsAsync();
+
             page = await context.NewPageAsync();
 
             await page.GotoAsync("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");

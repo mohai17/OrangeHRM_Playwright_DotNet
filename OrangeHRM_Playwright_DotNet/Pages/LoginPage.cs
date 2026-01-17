@@ -8,7 +8,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
     public class LoginPage
     {
 
-        private IPage page;
+        private readonly IPage page;
         public LoginPage(IPage page)
         {
             this.page = page;

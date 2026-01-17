@@ -7,7 +7,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
 {
     internal class AdminUserManagementPage
     {
-        private IPage page;
+        private readonly IPage page;
         public AdminUserManagementPage(IPage page)
         {
             this.page = page;

@@ -8,7 +8,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
     public class ProfileDropDownObjects
     {
 
-        private IPage page;
+        private readonly IPage page;
         public ProfileDropDownObjects(IPage page)
         {
             this.page = page;

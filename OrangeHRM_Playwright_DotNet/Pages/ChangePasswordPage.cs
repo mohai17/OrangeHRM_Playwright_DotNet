@@ -6,7 +6,7 @@ namespace OrangeHRM_Playwright_DotNet.Pages
 
     internal class ChangePasswordPage
     {
-        private IPage page;
+        private readonly IPage page;
 
         public ChangePasswordPage(IPage page)
         {
