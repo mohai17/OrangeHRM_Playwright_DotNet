@@ -4,7 +4,9 @@ using System.Text;
 
 namespace OrangeHRM_Playwright_DotNet.Utilities
 {
-    internal class ExcelUtilities
+    using ClosedXML.Excel;
+
+    public static class ExcelReader
     {
     }
 }
