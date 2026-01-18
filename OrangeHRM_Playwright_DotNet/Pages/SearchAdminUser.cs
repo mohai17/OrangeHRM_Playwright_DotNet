@@ -29,5 +29,12 @@ namespace OrangeHRM_Playwright_DotNet.Pages
             await page.Locator("//button[normalize-space()='Reset']").ClickAsync();
         }
 
+        public async Task<bool> IsUserNameFound(string username)
+        {
+            string xpath = $"//div[contains(text(),'{username}')]";
+            
+            return await page.Locator(xpath).IsVisibleAsync();
+        }
+
     }
 }

@@ -33,8 +33,10 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             await admin.Enter_Password("amelia123");
             await admin.Enter_ConfirmPassword("amelia123");
             await admin.ClickOnSaveButton();
+            await admin.IsSuccessfullyAddedMsgDisplayed();
+            await page.WaitForRequestFinishedAsync();
 
-            
+
             SearchAdminUser search = new SearchAdminUser(page);
             await search.Enter_SearchUsername("amelia");
             await search.ClickOnSearchButton();
@@ -43,8 +45,10 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             DeleteAdminUser deleteAdmin = new DeleteAdminUser(page);
             await deleteAdmin.ClickOnDeleteButton();
             await deleteAdmin.ClickOnConfirmationButton();
+            await page.WaitForRequestFinishedAsync();
 
             bool actualResult = await deleteAdmin.IsSuccessfullyDeleted();
+            
 
             Assert.That(actualResult, Is.True);
      

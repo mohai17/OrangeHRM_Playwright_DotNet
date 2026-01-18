@@ -22,9 +22,9 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions()
             {
                 Headless = false,
-                SlowMo = 5000,
+                SlowMo = 3000,
                 Timeout = 120000,
-                Channel = "msedge"
+                Channel = "chrome"
             });
             
             context = await browser.NewContextAsync();
