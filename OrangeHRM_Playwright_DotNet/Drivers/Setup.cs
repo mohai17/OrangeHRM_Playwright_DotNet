@@ -34,7 +34,7 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             page = await context.NewPageAsync();
 
             await page.GotoAsync("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
+            await page.WaitForLoadStateAsync();
         }
 
 

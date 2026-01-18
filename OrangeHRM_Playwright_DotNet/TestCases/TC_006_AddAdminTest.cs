@@ -24,13 +24,13 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             await admin.ClickOnAddAdminUserButton();
             await admin.ClickOnUserRoleDropDown();
             await admin.SelectUserRoleFromDropDown();
-            await admin.Enter_EmployeeName("Amelia Brown");
-            await admin.SelectEmployeedName("Amelia Brown");
+            await admin.Enter_EmployeeName("Ravi M B");
+            await admin.SelectEmployeedName("Ravi M B");
             await admin.ClickOnStatusDropDown();
             await admin.SelectStatus();
-            await admin.Enter_Username("amelia");
-            await admin.Enter_Password("amelia123");
-            await admin.Enter_ConfirmPassword("amelia123");
+            await admin.Enter_Username("ravimb");
+            await admin.Enter_Password("RaviMB123");
+            await admin.Enter_ConfirmPassword("RaviMB123");
             await admin.ClickOnSaveButton();
 
             bool actualResult = await admin.IsSuccessfullyAddedMsgDisplayed();

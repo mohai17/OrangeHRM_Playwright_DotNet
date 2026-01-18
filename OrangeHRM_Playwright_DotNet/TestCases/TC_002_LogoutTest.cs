@@ -15,12 +15,14 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             await login.Enter_UserName("Admin");
             await login.Enter_Password("admin123");
             await login.ClickOnLoginButton();
+          
 
             ProfileDropDownObjects profile = new ProfileDropDownObjects(page);
 
             await profile.ClickOnProfileDropdown();
             await profile.ClickOnLogoutLink();
-         
+          
+
             bool actualResult = await login.IsLoginPageTitleDisplayed();
 
             Assert.That(actualResult, Is.True);

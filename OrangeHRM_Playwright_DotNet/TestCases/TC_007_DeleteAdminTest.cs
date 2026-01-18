@@ -25,22 +25,23 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             await admin.ClickOnAddAdminUserButton();
             await admin.ClickOnUserRoleDropDown();
             await admin.SelectUserRoleFromDropDown();
-            await admin.Enter_EmployeeName("Amelia Brown");
-            await admin.SelectEmployeedName("Amelia Brown");
+            await admin.Enter_EmployeeName("Ranga Akunuri");
+            await admin.SelectEmployeedName("Ranga Akunuri");
             await admin.ClickOnStatusDropDown();
             await admin.SelectStatus();
-            await admin.Enter_Username("amelia");
-            await admin.Enter_Password("amelia123");
-            await admin.Enter_ConfirmPassword("amelia123");
+            await admin.Enter_Username("ranga");
+            await admin.Enter_Password("ranga123");
+            await admin.Enter_ConfirmPassword("ranga123");
             await admin.ClickOnSaveButton();
             await admin.IsSuccessfullyAddedMsgDisplayed();
             await page.WaitForRequestFinishedAsync();
 
 
             SearchAdminUser search = new SearchAdminUser(page);
-            await search.Enter_SearchUsername("amelia");
+            await search.Enter_SearchUsername("ranga");
             await search.ClickOnSearchButton();
-         
+            
+
 
             DeleteAdminUser deleteAdmin = new DeleteAdminUser(page);
             await deleteAdmin.ClickOnDeleteButton();

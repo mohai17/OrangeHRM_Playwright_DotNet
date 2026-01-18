@@ -22,6 +22,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             SearchAdminUser search = new SearchAdminUser(page);
             await search.Enter_SearchUsername("FMLName");
             await search.ClickOnSearchButton();
+
             bool actualResult = await search.IsUserNameFound("FMLName");
 
             Assert.That(actualResult, Is.True);
