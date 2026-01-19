@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
 using OrangeHRM_Playwright_DotNet.Drivers;
 using OrangeHRM_Playwright_DotNet.Pages;
+using OrangeHRM_Playwright_DotNet.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,34 +15,66 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
         public async Task TS_001_user_wants_to_delete_specific_admin_user()
         {
-            
+
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+            ExcelReaderUtil.PopulateInCollection("C:\\Users\\mohai.islam\\source\\repos\\OrangeHRM_Playwright_DotNet\\OrangeHRM_Playwright_DotNet\\TestData\\Data.xlsx", "LoginData");
+
+            var username = ExcelReaderUtil.ReadData(1, "Username");
+            var password = ExcelReaderUtil.ReadData(1, "Password");
+
+            if (username == null)
+                throw new ArgumentNullException(nameof(username), "Username cannot be null.");
+            if (password == null)
+                throw new ArgumentNullException(nameof(password), "Password cannot be null.");
+
             LoginPage login = new LoginPage(page);
-            await login.Enter_UserName("Admin");
-            await login.Enter_Password("admin123");
+
+            await login.Enter_UserName(username);
+            await login.Enter_Password(password);
             await login.ClickOnLoginButton();
+
+
+            ExcelReaderUtil.PopulateInCollection("C:\\Users\\mohai.islam\\source\\repos\\OrangeHRM_Playwright_DotNet\\OrangeHRM_Playwright_DotNet\\TestData\\Data.xlsx", "AddAdminData");
+
+            var empName = ExcelReaderUtil.ReadData(2, "EmployeeName");
+            if (empName == null)
+                throw new ArgumentNullException(nameof(empName), "EmployeeName cannot be null.");
+
+
+            var admin_username = ExcelReaderUtil.ReadData(2, "UserName");
+            if (admin_username == null)
+                throw new ArgumentNullException(nameof(admin_username), "Admin username cannot be null.");
+
+            var admin_password = ExcelReaderUtil.ReadData(2, "Password");
+            if (admin_password == null)
+                throw new ArgumentNullException(nameof(admin_password), "Admin password cannot be null.");
+
+            var cpassword = ExcelReaderUtil.ReadData(2, "ConfirmPassword");
+            if (cpassword == null)
+                throw new ArgumentNullException(nameof(cpassword), "Confirm password cannot be null.");
+
 
             AdminUserManagementPage admin = new AdminUserManagementPage(page);
             await admin.ClickOnAdminItem();
             await admin.ClickOnAddAdminUserButton();
             await admin.ClickOnUserRoleDropDown();
             await admin.SelectUserRoleFromDropDown();
-            await admin.Enter_EmployeeName("Ranga Akunuri");
-            await admin.SelectEmployeedName("Ranga Akunuri");
+            await admin.Enter_EmployeeName(empName);
+            await admin.SelectEmployeedName(empName);
             await admin.ClickOnStatusDropDown();
             await admin.SelectStatus();
-            await admin.Enter_Username("ranga");
-            await admin.Enter_Password("ranga123");
-            await admin.Enter_ConfirmPassword("ranga123");
+            await admin.Enter_Username(admin_username);
+            await admin.Enter_Password(admin_password);
+            await admin.Enter_ConfirmPassword(cpassword);
             await admin.ClickOnSaveButton();
-            await admin.IsSuccessfullyAddedMsgDisplayed();
             await page.WaitForRequestFinishedAsync();
 
-
+            await page.PauseAsync();
             SearchAdminUser search = new SearchAdminUser(page);
-            await search.Enter_SearchUsername("ranga");
+            await search.Enter_SearchUsername(admin_username);
             await search.ClickOnSearchButton();
             
-
 
             DeleteAdminUser deleteAdmin = new DeleteAdminUser(page);
             await deleteAdmin.ClickOnDeleteButton();

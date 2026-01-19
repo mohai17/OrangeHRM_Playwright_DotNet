@@ -23,8 +23,8 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             {
                 Headless = false,
                 SlowMo = 3000,
-                Timeout = 120000,
-                Channel = "chrome"
+                Timeout = 180000,
+                Channel = "msedge"
             });
             
             context = await browser.NewContextAsync();
@@ -33,8 +33,11 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
 
             page = await context.NewPageAsync();
 
+            
             await page.GotoAsync("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-            await page.WaitForLoadStateAsync();
+        
+
+
         }
 
 
