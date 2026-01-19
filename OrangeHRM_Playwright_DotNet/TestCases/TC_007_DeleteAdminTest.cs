@@ -72,7 +72,6 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             await admin.ClickOnSaveButton();
             await page.WaitForRequestFinishedAsync();
 
-            await page.PauseAsync();
             SearchAdminUser search = new SearchAdminUser(page);
             await search.Enter_SearchUsername(admin_username);
             await search.ClickOnSearchButton();

@@ -17,13 +17,13 @@ namespace OrangeHRM_Playwright_DotNet.Pages
         public async Task Enter_UserName(string username)
         {
 
-            await page.Locator("//input[@placeholder='Username']").FillAsync(username);
+            await page.Locator("//input[@placeholder='username']").FillAsync(username);
 
         }
 
         public async Task Enter_Password(string password)
         {
-            await page.Locator("//input[@placeholder='Password']").FillAsync(password);
+            await page.Locator("//input[@placeholder='password']").FillAsync(password);
 
         }
 

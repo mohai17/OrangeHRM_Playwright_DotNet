@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -25,6 +25,18 @@
 
   <ItemGroup>
     <Using Include="NUnit.Framework" />
+  </ItemGroup>
+
+ 
+  <ItemGroup>
+    <Content Include="TestData\Data.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+ 
+  <ItemGroup>
+    <Folder Include="TestResults\" />
   </ItemGroup>
 
 </Project>

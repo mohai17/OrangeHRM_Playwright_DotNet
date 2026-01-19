@@ -19,7 +19,7 @@ namespace OrangeHRM_Playwright_DotNet.Utilities
             if (!File.Exists(filename))
                 throw new FileNotFoundException("Excel file not found.", filename);
 
-          
+
             using var stream = File.Open(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             using var reader = ExcelReaderFactory.CreateReader(stream);
 
@@ -51,7 +51,7 @@ namespace OrangeHRM_Playwright_DotNet.Utilities
             return table;
         }
 
-  
+
         public sealed class DataCell
         {
             public required int RowNumber { get; init; }
@@ -88,7 +88,7 @@ namespace OrangeHRM_Playwright_DotNet.Utilities
             if (rowNumber <= 0 || string.IsNullOrWhiteSpace(columnName))
                 return null;
 
-       
+
             var data = _dataCache.FirstOrDefault(c =>
                 c.RowNumber == rowNumber &&
                 string.Equals(c.ColumnName, columnName, StringComparison.OrdinalIgnoreCase));
