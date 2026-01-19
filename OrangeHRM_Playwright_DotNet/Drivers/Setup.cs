@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using OrangeHRM_Playwright_DotNet.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -14,6 +15,7 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
         public IBrowserContext context = default!;
         public IPage page = default!;
 
+ 
 
         [SetUp]
         public async Task BrowserSetup()
@@ -23,7 +25,6 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             {
                 Headless = false,
                 SlowMo = 3000,
-                Timeout = 180000,
                 Channel = "msedge"
             });
             
@@ -33,9 +34,10 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
 
             page = await context.NewPageAsync();
 
-            
-            await page.GotoAsync("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        
+
+            await page.GotoAsync("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+                new PageGotoOptions { WaitUntil = WaitUntilState.DOMContentLoaded, Timeout=120000 });
+
 
 
         }

@@ -10,6 +10,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 {
     internal class TC_006_Check_that_add_admin_functionality_is_working_correctly:Setup
     {
+        private readonly string excelFilePath = Paths.DataXLSXPath();
 
         [Test]
 
@@ -17,7 +18,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
-            ExcelReaderUtil.PopulateInCollection("C:\\Users\\mohai.islam\\source\\repos\\OrangeHRM_Playwright_DotNet\\OrangeHRM_Playwright_DotNet\\TestData\\Data.xlsx", "LoginData");
+            ExcelReaderUtil.PopulateInCollection(excelFilePath, "LoginData");
 
             var username = ExcelReaderUtil.ReadData(1, "Username");
             var password = ExcelReaderUtil.ReadData(1, "Password");
@@ -40,7 +41,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
-            ExcelReaderUtil.PopulateInCollection("C:\\Users\\mohai.islam\\source\\repos\\OrangeHRM_Playwright_DotNet\\OrangeHRM_Playwright_DotNet\\TestData\\Data.xlsx", "AddAdminData");
+            ExcelReaderUtil.PopulateInCollection(excelFilePath, "AddAdminData");
 
             var empName = ExcelReaderUtil.ReadData(1, "EmployeeName");
             if (empName == null)
@@ -89,7 +90,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
-            ExcelReaderUtil.PopulateInCollection("C:\\Users\\mohai.islam\\source\\repos\\OrangeHRM_Playwright_DotNet\\OrangeHRM_Playwright_DotNet\\TestData\\Data.xlsx", "LoginData");
+            ExcelReaderUtil.PopulateInCollection(excelFilePath, "LoginData");
 
             var username = ExcelReaderUtil.ReadData(1, "Username");
             var password = ExcelReaderUtil.ReadData(1, "Password");

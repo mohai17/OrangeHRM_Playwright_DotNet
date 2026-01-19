@@ -9,12 +9,14 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 {
     internal class TC_008_Check_that_search_admin_functionality_is_working_correctly:Setup
     {
+        private readonly string excelFilePath = Paths.DataXLSXPath();
+
         [Test]
         public async Task TS_001_user_wants_to_search_with_username()
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
-            ExcelReaderUtil.PopulateInCollection("C:\\Users\\mohai.islam\\source\\repos\\OrangeHRM_Playwright_DotNet\\OrangeHRM_Playwright_DotNet\\TestData\\Data.xlsx", "LoginData");
+            ExcelReaderUtil.PopulateInCollection(excelFilePath, "LoginData");
 
             var username = ExcelReaderUtil.ReadData(1, "Username");
             var password = ExcelReaderUtil.ReadData(1, "Password");
@@ -34,8 +36,8 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
             AdminUserManagementPage admin = new AdminUserManagementPage(page);
             await admin.ClickOnAdminItem();
 
-            
-            ExcelReaderUtil.PopulateInCollection("C:\\Users\\mohai.islam\\source\\repos\\OrangeHRM_Playwright_DotNet\\OrangeHRM_Playwright_DotNet\\TestData\\Data.xlsx", "SearchData");
+
+            ExcelReaderUtil.PopulateInCollection(excelFilePath, "SearchData");
 
             var admin_username = ExcelReaderUtil.ReadData(1, "UserName");
             if (admin_username == null)
