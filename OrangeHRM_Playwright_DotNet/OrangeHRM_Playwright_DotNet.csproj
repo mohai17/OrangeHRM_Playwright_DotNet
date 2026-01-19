@@ -9,12 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Utilities\**" />
-    <EmbeddedResource Remove="Utilities\**" />
-    <None Remove="Utilities\**" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
     <PackageReference Include="ExtentReports" Version="5.0.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
