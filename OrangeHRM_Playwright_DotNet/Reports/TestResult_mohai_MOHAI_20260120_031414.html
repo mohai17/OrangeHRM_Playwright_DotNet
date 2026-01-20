@@ -1,0 +1,290 @@
+﻿<html xmlns:tp="http://schemas.datacontract.org/2004/07/Microsoft.VisualStudio.TestPlatform.Extensions.HtmlLogger.ObjectModel" xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <body>
+    <h1>Test run details</h1>
+    <div class="summary">
+      <div class="block"><span>Total tests</span><div class="total-tests">13</div><br></div>
+      <div class="block"><span>Passed  : </span><span class="passedTests">10</span><br><span>Failed  : </span><span class="failedTests">3</span><br><span>Skipped : </span><span class="skippedTests">0</span><br></div>
+      <div class="block"><span>Pass percentage</span><div class="pass-percentage">76 %</div><br></div>
+      <div class="block"><span>Run duration</span><div class="test-run-time">7m 16s</div><br></div><br></div>
+    <h2>Failed Results</h2><details open=""><summary>C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\bin\Debug\net9.0\OrangeHRM_Playwright_DotNet.dll</summary><div class="inner-row" Id="-372083748-failedResult">
+        <div class="leaf-division">
+          <div><span class="fail">✘</span><span> TS_005_Login_with_empty_username_and_password​</span><div class="duration"><span>8s 961ms</span><br></div>
+          </div>
+          <div class="error-info">
+    Error: <span class="error-message"><pre>System.ArgumentNullException : Username cannot be null. (Parameter 'username')</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at OrangeHRM_Playwright_DotNet.TestCases.TC_001_Check_that_Login_functionality_is_working_correctly.TS_005_Login_with_empty_username_and_password() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_001_LoginTest.cs:line 156
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+1)    at OrangeHRM_Playwright_DotNet.TestCases.TC_001_Check_that_Login_functionality_is_working_correctly.TS_005_Login_with_empty_username_and_password() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_001_LoginTest.cs:line 156
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+</pre></span><br></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="fail">✘</span><span> TS_001_user_wants_to_add_new_admin_user​</span><div class="duration"><span>1m 8s</span><br></div>
+          </div>
+          <div class="error-info">
+    Error: <span class="error-message"><pre>System.TimeoutException : Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//div[@role='option']//span[normalize-space()='Ravi M B']")</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 499
+   at OrangeHRM_Playwright_DotNet.Pages.AdminUserManagementPage.SelectEmployeedName(String ename) in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\Pages\AdminUserManagementPage.cs:line 44
+   at OrangeHRM_Playwright_DotNet.TestCases.TC_006_Check_that_add_admin_functionality_is_working_correctly.TS_001_user_wants_to_add_new_admin_user() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_006_AddAdminTest.cs:line 74
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+1)    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 499
+   at OrangeHRM_Playwright_DotNet.Pages.AdminUserManagementPage.SelectEmployeedName(String ename) in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\Pages\AdminUserManagementPage.cs:line 44
+   at OrangeHRM_Playwright_DotNet.TestCases.TC_006_Check_that_add_admin_functionality_is_working_correctly.TS_001_user_wants_to_add_new_admin_user() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_006_AddAdminTest.cs:line 74
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+</pre></span><br></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="fail">✘</span><span> TS_001_user_wants_to_search_with_username​</span><div class="duration"><span>34s 552ms</span><br></div>
+          </div>
+          <div class="error-info">
+    Error: <span class="error-message"><pre>  Assert.That(actualResult, Is.True)
+  Expected: True
+  But was:  False
+</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at OrangeHRM_Playwright_DotNet.TestCases.TC_008_Check_that_search_admin_functionality_is_working_correctly.TS_001_user_wants_to_search_with_username() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_008_SearchAdminTest.cs:line 53
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+
+1)    at OrangeHRM_Playwright_DotNet.TestCases.TC_008_Check_that_search_admin_functionality_is_working_correctly.TS_001_user_wants_to_search_with_username() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_008_SearchAdminTest.cs:line 53
+
+</pre></span><br></div>
+        </div>
+      </div></details><h2>All Results</h2><details><summary>C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\bin\Debug\net9.0\OrangeHRM_Playwright_DotNet.dll</summary><div class="inner-row" Id="-372083748">
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_001_Login_with_valid_username_and_valid_password​</span><div class="duration"><span>18s 919ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_002_Login_with_invalid_username_and_invalid_password​</span><div class="duration"><span>21s 379ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_003_Login_with_valid_username_and_invalid_password​</span><div class="duration"><span>22s 838ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_004_Login_with_invalid_username_and_valid_password​</span><div class="duration"><span>17s 228ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="fail">✘</span><span> TS_005_Login_with_empty_username_and_password​</span><div class="duration"><span>8s 961ms</span><br></div>
+          </div>
+          <div class="error-info">
+    Error: <span class="error-message"><pre>System.ArgumentNullException : Username cannot be null. (Parameter 'username')</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at OrangeHRM_Playwright_DotNet.TestCases.TC_001_Check_that_Login_functionality_is_working_correctly.TS_005_Login_with_empty_username_and_password() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_001_LoginTest.cs:line 156
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+1)    at OrangeHRM_Playwright_DotNet.TestCases.TC_001_Check_that_Login_functionality_is_working_correctly.TS_005_Login_with_empty_username_and_password() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_001_LoginTest.cs:line 156
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.GetResult()
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+</pre></span><br></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_001_user_wants_to_logout​</span><div class="duration"><span>30s 212ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_001_user_wants_to_view_about​</span><div class="duration"><span>27s 733ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_001_user_wants_to_go_to_support_page​</span><div class="duration"><span>25s 11ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_001_user_wants_to_change_password_with_correct_old_password​</span><div class="duration"><span>40s 640ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="fail">✘</span><span> TS_001_user_wants_to_add_new_admin_user​</span><div class="duration"><span>1m 8s</span><br></div>
+          </div>
+          <div class="error-info">
+    Error: <span class="error-message"><pre>System.TimeoutException : Timeout 30000ms exceeded.
+Call log:
+  - waiting for Locator("//div[@role='option']//span[normalize-space()='Ravi M B']")</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 499
+   at OrangeHRM_Playwright_DotNet.Pages.AdminUserManagementPage.SelectEmployeedName(String ename) in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\Pages\AdminUserManagementPage.cs:line 44
+   at OrangeHRM_Playwright_DotNet.TestCases.TC_006_Check_that_add_admin_functionality_is_working_correctly.TS_001_user_wants_to_add_new_admin_user() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_006_AddAdminTest.cs:line 74
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+1)    at Microsoft.Playwright.Transport.Connection.InnerSendMessageToServerAsync[T](ChannelOwner object, String method, Dictionary`2 dictionary, Boolean keepNulls) in /_/src/Playwright/Transport/Connection.cs:line 201
+   at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal, String title) in /_/src/Playwright/Transport/Connection.cs:line 499
+   at OrangeHRM_Playwright_DotNet.Pages.AdminUserManagementPage.SelectEmployeedName(String ename) in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\Pages\AdminUserManagementPage.cs:line 44
+   at OrangeHRM_Playwright_DotNet.TestCases.TC_006_Check_that_add_admin_functionality_is_working_correctly.TS_001_user_wants_to_add_new_admin_user() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_006_AddAdminTest.cs:line 74
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+</pre></span><br></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_002_user_wants_to_calcel_add_admin_process​</span><div class="duration"><span>33s 610ms</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="pass">✔</span><span> TS_001_user_wants_to_delete_specific_admin_user​</span><div class="duration"><span>1m 17s</span><br></div>
+          </div>
+          <div class="error-info"></div>
+        </div>
+        <div class="leaf-division">
+          <div><span class="fail">✘</span><span> TS_001_user_wants_to_search_with_username​</span><div class="duration"><span>34s 552ms</span><br></div>
+          </div>
+          <div class="error-info">
+    Error: <span class="error-message"><pre>  Assert.That(actualResult, Is.True)
+  Expected: True
+  But was:  False
+</pre></span><br>
+    Stack trace: <span class="error-stack-trace"><pre>   at OrangeHRM_Playwright_DotNet.TestCases.TC_008_Check_that_search_admin_functionality_is_working_correctly.TS_001_user_wants_to_search_with_username() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_008_SearchAdminTest.cs:line 53
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await[TResult](TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(TestExecutionContext context, Func`1 invoke)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+
+1)    at OrangeHRM_Playwright_DotNet.TestCases.TC_008_Check_that_search_admin_functionality_is_working_correctly.TS_001_user_wants_to_search_with_username() in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\TestCases\TC_008_SearchAdminTest.cs:line 53
+
+</pre></span><br></div>
+        </div>
+      </div></details><div>
+      <h2>Informational messages</h2><span>NUnit Adapter 6.1.0.0: Test execution started</span><br><span>Running all tests in C:\Users\mohai\source\repos\OrangeHRM_Playwright_DotNet\OrangeHRM_Playwright_DotNet\bin\Debug\net9.0\OrangeHRM_Playwright_DotNet.dll</span><br><span>   NUnit3TestExecutor discovered 13 of 13 NUnit test cases using Current Discovery mode, Non-Explicit run</span><br><span>U: Admin
+P: admin123
+</span><br><span>U: abcde
+P: abcde123
+</span><br><span>U: Admin
+P: abcde124
+</span><br><span>U: abcde
+P: admin123
+</span><br><span>U: 
+P: 
+</span><br><span>U: Admin
+P: admin123
+U: Ravi M B
+U: ravimb
+U: ravimb123
+P: ravimb123
+</span><br><span>U: Admin
+P: admin123
+</span><br><span>NUnit Adapter 6.1.0.0: Test execution complete</span><br></div>
+  </body>
+  <style>
+        body { font-family: Calibri, Verdana, Arial, sans-serif; background-color: White; color: Black; }
+        h2 {
+        margin-top: 15px;
+        margin-bottom:10px;
+        }
+        pre {
+        white-space: pre-wrap;
+        }
+        .summary {font-family:monospace;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+        display: flex;
+        flex-wrap: wrap;
+        }
+        .row {
+        border: 2px solid #ffffff;
+        width:100%;
+        cursor:pointer;
+        background-color:#d7e9fa;
+        }
+        .list-row {
+        border: 2px solid #ffffff;
+        width:100%;
+        cursor:pointer;
+        background-color:#ffffff;
+        }
+        .inner-row{
+        border: 2px solid #ffffff;
+        padding-left:1%;
+        margin-left:1%;
+        background-color:#ffffff;
+        }
+        .block{
+        width : 150px;
+        }
+        .leaf-division{
+        border: 2px solid #ffffff;
+        background-color:#e6eff7;
+        }
+        .pass { color: #0c0; }
+        .fail { color: #c00; }
+        .error-message { color : brown; }
+        .error-stack-trace { color: brown; }
+        .duration {float:right;padding-right:1%;}
+        .total-tests { font-size : 30px}
+        .test-run-time { font-size : 30px}
+        .pass-percentage { font-size : 30px}
+        .error-info{
+        margin-left:16px;
+        }
+      </style>
+</html>
