@@ -8,11 +8,14 @@ using System.Text;
 
 namespace OrangeHRM_Playwright_DotNet.TestCases
 {
+    //Test Case
     internal class TC_006_Check_that_add_admin_functionality_is_working_correctly:Setup
     {
         private readonly string excelFilePath = Paths.DataXLSXPath();
 
         [Test]
+
+        //Test Scenario
 
         public async Task TS_001_user_wants_to_add_new_admin_user()
         {
@@ -86,6 +89,8 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
         }
 
         [Test]
+
+        //Test Scenario
         public async Task TS_002_user_wants_to_calcel_add_admin_process()
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);

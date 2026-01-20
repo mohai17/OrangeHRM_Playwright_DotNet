@@ -6,10 +6,12 @@ using System.Text;
 
 namespace OrangeHRM_Playwright_DotNet.TestCases
 {
+    //Test Case
     internal class TC_003_Check_that_About_Link_is_working_correctly:Setup
     {
         [Test]
 
+        //Test Scenario
         public async Task TS_001_user_wants_to_view_about()
         {
 

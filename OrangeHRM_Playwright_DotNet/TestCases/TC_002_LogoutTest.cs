@@ -3,11 +3,13 @@ using OrangeHRM_Playwright_DotNet.Drivers;
 
 namespace OrangeHRM_Playwright_DotNet.TestCases
 {
+    //Test Case
     internal class TC_002_Check_that_logout_functionality_is_working_correcly:Setup
     {
 
         [Test]
 
+        //Test Scenario
         public async Task TS_001_user_wants_to_logout()
         {
             LoginPage login = new LoginPage(page);

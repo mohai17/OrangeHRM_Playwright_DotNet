@@ -6,10 +6,13 @@ using System.Text;
 
 namespace OrangeHRM_Playwright_DotNet.TestCases
 {
+    //Test Case
     internal class TC_005_Check_that_Change_Password_functionality_is_working_correctly:Setup
     {
 
         [Test]
+
+        //Test Scenario
 
         public async Task TS_001_user_wants_to_change_password_with_correct_old_password()
         {

@@ -1,11 +1,5 @@
 ﻿using Microsoft.Playwright;
-using OrangeHRM_Playwright_DotNet.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+
 
 namespace OrangeHRM_Playwright_DotNet.Drivers
 {
@@ -22,7 +16,7 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
             playwright = await Playwright.CreateAsync();
             browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions()
             {
-                Headless = true,
+                Headless = false,
                 SlowMo = 3000,
                 Channel = "msedge"
             });

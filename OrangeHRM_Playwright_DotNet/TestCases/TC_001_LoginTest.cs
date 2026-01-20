@@ -6,12 +6,15 @@ using System.Collections.Immutable;
 
 namespace OrangeHRM_Playwright_DotNet.TestCases
 {
+    //Test Case
     internal class TC_001_Check_that_Login_functionality_is_working_correctly: Setup
     {
 
         private readonly string excelFilePath = Paths.DataXLSXPath();
 
         [Test]
+
+        //Test Scenario
         public async Task TS_001_Login_with_valid_username_and_valid_password()
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
@@ -43,6 +46,8 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
         }
 
         [Test]
+
+        //Test Scenario
         public async Task TS_002_Login_with_invalid_username_and_invalid_password()
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
@@ -73,6 +78,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
         [Test]
 
+        //Test Scenario
         public async Task TS_003_Login_with_valid_username_and_invalid_password()
         {
 
@@ -106,6 +112,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
         [Test]
 
+        //Test Scenario
         public async Task TS_004_Login_with_invalid_username_and_valid_password()
         {
 
@@ -138,7 +145,8 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
         }
 
         [Test]
-        
+
+        //Test Scenario
         public async Task TS_005_Login_with_empty_username_and_password()
         {
 
