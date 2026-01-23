@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
 
 
+
 namespace OrangeHRM_Playwright_DotNet.Drivers
 {
     public class Setup
@@ -13,14 +14,17 @@ namespace OrangeHRM_Playwright_DotNet.Drivers
         [OneTimeSetUp]
         public async Task OneTimeBrowserSetup()
         {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             playwright = await Playwright.CreateAsync();
             browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions()
             {
-                Headless = false,
-                SlowMo = 3000,
+                Headless = true,
+                SlowMo = 5000,
                 Channel = "msedge"
             });
         }
+
+
 
         [SetUp]
         public async Task TestSetup()

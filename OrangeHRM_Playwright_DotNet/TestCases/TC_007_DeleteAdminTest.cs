@@ -12,7 +12,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
     internal class TC_007_Check_that_admin_user_deletion_functionality_is_working_correctly:Setup
     {
 
-        private readonly string excelFilePath = Paths.DataXLSXPath();
+        private readonly string excelFilePath = Paths.DataXLSXPath("Data.xlsx");
 
         [Test]
 
@@ -21,17 +21,10 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
         public async Task TS_001_user_wants_to_delete_specific_admin_user()
         {
 
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
             ExcelReaderUtil.PopulateInCollection(excelFilePath, "LoginData");
 
-            var username = ExcelReaderUtil.ReadData(1, "Username");
-            var password = ExcelReaderUtil.ReadData(1, "Password");
-
-            if (username == null)
-                throw new ArgumentNullException(nameof(username), "Username cannot be null.");
-            if (password == null)
-                throw new ArgumentNullException(nameof(password), "Password cannot be null.");
+            var username = ExcelReaderUtil.ReadData(1, "Username")?? string.Empty;
+            var password = ExcelReaderUtil.ReadData(1, "Password")?? string.Empty;
 
             LoginPage login = new LoginPage(page);
 
@@ -42,22 +35,10 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
             ExcelReaderUtil.PopulateInCollection(excelFilePath, "AddAdminData");
 
-            var empName = ExcelReaderUtil.ReadData(2, "EmployeeName");
-            if (empName == null)
-                throw new ArgumentNullException(nameof(empName), "EmployeeName cannot be null.");
-
-
-            var admin_username = ExcelReaderUtil.ReadData(2, "UserName");
-            if (admin_username == null)
-                throw new ArgumentNullException(nameof(admin_username), "Admin username cannot be null.");
-
-            var admin_password = ExcelReaderUtil.ReadData(2, "Password");
-            if (admin_password == null)
-                throw new ArgumentNullException(nameof(admin_password), "Admin password cannot be null.");
-
-            var cpassword = ExcelReaderUtil.ReadData(2, "ConfirmPassword");
-            if (cpassword == null)
-                throw new ArgumentNullException(nameof(cpassword), "Confirm password cannot be null.");
+            var empName = ExcelReaderUtil.ReadData(2, "EmployeeName")?? string.Empty;
+            var admin_username = ExcelReaderUtil.ReadData(2, "UserName")?? string.Empty;
+            var admin_password = ExcelReaderUtil.ReadData(2, "Password")?? string.Empty;
+            var cpassword = ExcelReaderUtil.ReadData(2, "ConfirmPassword")?? string.Empty;
 
 
             AdminUserManagementPage admin = new AdminUserManagementPage(page);

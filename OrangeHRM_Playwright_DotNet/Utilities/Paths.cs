@@ -8,9 +8,12 @@ namespace OrangeHRM_Playwright_DotNet.Utilities
     public static class Paths
     {
 
-        public static string DataXLSXPath()
+        public static string DataXLSXPath(string XLName)
         {
-               return System.IO.Path.Combine(Directory.GetCurrentDirectory(), "TestData", "Data.xlsx");
+            string projectRoot = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+            string localfilePath = Path.Combine(projectRoot, "TestData", $"{XLName}");
+
+            return localfilePath;
         }
 
     }

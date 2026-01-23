@@ -10,25 +10,18 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
     //Test Case
     internal class TC_008_Check_that_search_admin_functionality_is_working_correctly:Setup
     {
-        private readonly string excelFilePath = Paths.DataXLSXPath();
+        private readonly string excelFilePath = Paths.DataXLSXPath("Data.xlsx");
 
         [Test]
 
         //Test Scenario
         public async Task TS_001_user_wants_to_search_with_username()
         {
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
             ExcelReaderUtil.PopulateInCollection(excelFilePath, "LoginData");
 
-            var username = ExcelReaderUtil.ReadData(1, "Username");
-            var password = ExcelReaderUtil.ReadData(1, "Password");
-
-
-            if (username == null)
-                throw new ArgumentNullException(nameof(username), "Username cannot be null.");
-            if (password == null)
-                throw new ArgumentNullException(nameof(password), "Password cannot be null.");
+            var username = ExcelReaderUtil.ReadData(1, "Username")?? string.Empty;
+            var password = ExcelReaderUtil.ReadData(1, "Password")?? string.Empty;
 
             LoginPage login = new LoginPage(page);
 
@@ -42,10 +35,7 @@ namespace OrangeHRM_Playwright_DotNet.TestCases
 
             ExcelReaderUtil.PopulateInCollection(excelFilePath, "SearchData");
 
-            var admin_username = ExcelReaderUtil.ReadData(1, "UserName");
-            if (admin_username == null)
-                throw new ArgumentNullException(nameof(admin_username), "EmployeeName cannot be null.");
-
+            var admin_username = ExcelReaderUtil.ReadData(1, "UserName")?? string.Empty;
 
             SearchAdminUser search = new SearchAdminUser(page);
             await search.Enter_SearchUsername(admin_username);
